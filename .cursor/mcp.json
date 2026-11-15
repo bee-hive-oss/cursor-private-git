@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "forgejo": {
+      "command": "bash",
+      "args": ["scripts/run-forgejo-mcp.sh"]
+    }
+  }
+}

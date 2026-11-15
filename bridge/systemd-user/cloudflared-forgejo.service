@@ -1,0 +1,14 @@
+[Unit]
+Description=Cloudflare Tunnel to local Forgejo (cursor-private-git)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+Environment=PATH=%h/.local/bin:/usr/local/bin:/usr/bin
+ExecStart=%h/.local/bin/cloudflared tunnel --config %h/.config/cursor-private-git/cloudflared-config.yml run
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,10 @@
+---
+description: Private Forgejo is canonical; GitHub is placeholder only
+alwaysApply: true
+---
+
+- Treat Forgejo as the only destination for code pushes and pull requests.
+- Use the `forgejo` MCP tools for PRs, issues, and repo file reads.
+- Do not add GitHub Actions or push implementation code to GitHub.
+- Never log or commit secret values; reference environment variable names only.
+- Respect Cloudflare Access headers configured by `scripts/agent-git-setup.sh`.

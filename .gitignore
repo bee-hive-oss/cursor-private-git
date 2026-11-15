@@ -1,0 +1,13 @@
+node_modules/
+dist/
+!mcp/forgejo-mcp/dist/
+!mcp/forgejo-mcp/dist/**
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store
+coverage/
+.idea/
+.vscode/
+*.tgz

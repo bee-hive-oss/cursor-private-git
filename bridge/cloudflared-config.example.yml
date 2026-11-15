@@ -1,0 +1,20 @@
+# Template for bridge/write-cloudflared-config.sh — do not edit in place on live systems.
+# APPLICATION_AUD = 64-char hex "Application Audience (AUD) Tag" (Access app → Additional settings).
+# Generated file default: ~/.config/cursor-private-git/cloudflared-config.yml
+
+tunnel: <TUNNEL_ID>
+credentials-file: <TUNNEL_CREDENTIALS_FILE>
+
+ingress:
+  - hostname: <FORGEJO_PUBLIC_HOST>
+    service: <FORGEJO_LOCAL_URL>
+    originRequest:
+      access:
+        required: true
+        teamName: <TEAM_NAME>
+        audTag:
+          - "<APPLICATION_AUD>"
+  - service: http_status:404
+
+# Optional: metrics for local debugging (127.0.0.1 only)
+# metrics: 127.0.0.1:49312
